@@ -1,11 +1,11 @@
-var date,h,m,s,animate;
+var d,h,m,s,animate;
 
 function init() {
-    date = new Date();
-    h = date.getHours();
-    m = date.getMinutes();
-    s = date.getSeconds();
-    console.log('working')
+    d = new Date();
+    h = d.getHours();
+    m = d.getMinutes();
+    s = d.getSeconds();
+    clock();
 };
 
 function clock() {
@@ -15,19 +15,20 @@ function clock() {
         m++;
         if(m==60){
             m=0;
-            hr++;
-            if(hr==24){
-                hr=0;
+            h++;
+            if(h==24){
+                h=0;
             }
         }
     }
-    $('sec','s' );
-    $('min', 'm');
-    $('hr', 'h');
+    $('sec',s );
+    $('min', m);
+    $('hr', h);
+    animate = setTimeout(clock,1000);
+
 }
 
 
-animate = setTimeout(clock, 1000);
 
 function $(id,val){
     if(val < 10){
