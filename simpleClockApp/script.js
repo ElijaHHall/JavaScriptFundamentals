@@ -1,4 +1,4 @@
-var d,h,m,s,animate;
+var d,h,m,s,count;
 
 function init() {
     d = new Date();
@@ -24,7 +24,7 @@ function clock() {
     $('sec',s );
     $('min', m);
     $('hr', h);
-    animate = setTimeout(clock,1000);
+    count = setTimeout(clock,1000);
 
 }
 
